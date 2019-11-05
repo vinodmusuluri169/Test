@@ -1,0 +1,30 @@
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+
+	<bean id="demo" class="com.rs.constructor.DemoBean">
+
+		<constructor-arg value="admin" index="1" />
+		<constructor-arg value="admin" index="0" />
+		
+	</bean>
+	
+	<bean id="demo1" class="com.rs.constructor.DemoBean">
+		<constructor-arg>
+			<list>
+
+				<value>java4s</value>
+				<value>.net</value>
+				<value>python</value>
+				<value>java4s</value>
+
+			</list>
+
+		</constructor-arg>
+
+	</bean>
+
+</beans> -->

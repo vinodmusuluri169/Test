@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	 <bean id="helloBean" class="com.mkyong.common.HelloWorld">
+		<property name="name" value="Mkyong" />
+
+		<property name="studentsData">
+<!-- 			<list> <value>sun</value> <value>Oracle</value> <value>java4s</value> 
+				<value>sun</value> </list>
+
+			<set> <value>sun</value> <value>Oracle</value> <value>java4s</value> 
+				<value>sun</value> </set>
+ -->
+			<map>
+				<entry key="001">
+					<value>sun</value>
+				</entry>
+
+				<entry key="002">
+					<value>oracle</value>
+				</entry>
+
+				<entry key="003">
+					<value>java4s</value>
+				</entry>
+
+				<entry key="004">
+					<value>sunil</value>
+				</entry>
+
+			</map>
+		</property>
+	</bean>
+ 
+	<bean id="user" class="com.mkyong.common.User" autowire="autodetect">
+ 		<!-- <property name="id" value="001" /> <property name="fullname" value="Rajasri" 
+			/> -->
+
+		<constructor-arg value="12345" index="1" />
+		<constructor-arg value="1" index="0" />
+
+<!--  		 <property name="address" ref="address"/> 
+	
+ 	<property name="address">
+			<ref local="address" />
+		</property>
+ -->
+ 	</bean>
+ 
+ 	 <bean id="address" class="com.mkyong.common.Address">
+		<property name="area" value="madhapur,hyd,TG" />
+		<property name="userId" value="001" />
+	</bean>
+	 
+   	<!-- <bean name="schoolBean" class="com.rs.bean.lifecycle.School">
+	<property name="name" value= " Sri Chaitanya " ></property>
+	<property name="board" value= " CBSC " ></property>
+	</bean>
+   	 -->
+   <bean name="schoolBean" class="com.rs.bean.lifecycle.School" 
+	init-method="init" destroy-method="destroy" >
+	<property name="name" value= " Kakatiya " />
+	<property name="board" value=" SSC "/>
+	</bean>
+   
+	
+
+</beans>
